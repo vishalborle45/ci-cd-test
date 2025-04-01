@@ -1,0 +1,25 @@
+name: this is a test of CI
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: 
+  pull_request:
+    branches:
+      - main
+
+  push:
+    branches:
+      - main
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name : ckeckout Repo
+        uses : actions/checkout@v4
+      - name : setup node
+        uses : actions/setup-node@v4
+      - name : install dependecies
+        run : npm install
+      - name : log the status
+        run : echo  "the github action are executed successfully"
+
+   
+ 
